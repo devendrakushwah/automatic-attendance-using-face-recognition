@@ -71,7 +71,7 @@ def feed_attendance_logic(request):
 				print(message)
 				s = smtplib.SMTP('smtp.gmail.com', 587) 
 				s.starttls() 
-				s.login("vaishnavmajor@gmail.com", "csec2020") 
+				s.login("vaishnavmajor@gmail.com", "--c2-0-0") 
 				s.sendmail("vaishnavmajor@gmail.com", user.email, message) 
 				s.quit()
 			else:
@@ -81,10 +81,9 @@ def feed_attendance_logic(request):
 				print(message)
 				s = smtplib.SMTP('smtp.gmail.com', 587) 
 				s.starttls() 
-				s.login("vaishnavmajor@gmail.com", "csec2020") 
+				s.login("vaishnavmajor@gmail.com", "--c2-0-0") 
 				s.sendmail("vaishnavmajor@gmail.com", user.email, message) 
 				s.quit()
 			
 	qSet = Attendance.objects.filter(user=request.user)
 	return render(request,'main/my_attendance.html',{'data':qSet})
-	s
